@@ -18,14 +18,16 @@ mix
   .setPublicPath('./dist')
   .browserSync('sage.test');
 
+const tailwindcss = require('tailwindcss')
+
 mix
-  .sass('resources/assets/styles/app.scss', 'styles')
-  .sass('resources/assets/styles/editor.scss', 'styles')
-  .purgeCss({
-    extend: { content: [path.join(__dirname, 'index.php')] },
-    whitelist: require('purgecss-with-wordpress').whitelist,
-    whitelistPatterns: require('purgecss-with-wordpress').whitelistPatterns,
-  });
+.sass('resources/assets/styles/app.scss', 'dist/styles')
+.options({
+  processCssUrls: false,
+  postCss: [
+    tailwindcss('./tailwind.config.js'),
+  ],
+})
 
 mix
   .js('resources/assets/scripts/app.js', 'scripts')
