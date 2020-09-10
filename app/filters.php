@@ -48,6 +48,7 @@ add_action('the_post', function() {
     if (is_page_template('template-sidebar-left.blade.php') || is_page_template('template-sidebar-right.blade.php')) {
         \Roots\view()->share('classes', [
         'main' => 'filter',
+        'container' => 'mx-auto flex flex-wrap pt-4 pb-12'
         // 'twitter' => 'https://twitter.com/rootswp' 
         ]);
         };
