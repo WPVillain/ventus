@@ -1,7 +1,7 @@
 @include('partials.header')
 
 <div class="container">
-  <main class="main">
+  <main class="main {{  $classes['main'] }}">
     @yield('content')
   </main>
 
