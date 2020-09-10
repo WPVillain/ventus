@@ -151,4 +151,9 @@ add_action('widgets_init', function () {
         'name' => __('Page Right Sidebar', 'sage'),
         'id' => 'sidebar-right'
     ] + $config);
+
+    register_sidebar([
+        'name' => __('Page Left Sidebar', 'sage'),
+        'id' => 'sidebar-left'
+    ] + $config);
 });
