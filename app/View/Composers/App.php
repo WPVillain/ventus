@@ -22,8 +22,21 @@ class App extends Composer
      */
     public function with()
     {
-        return [
+        if (is_page_template('template-sidebar-left.blade.php') || is_page_template('template-sidebar-right.blade.php')) {
+            return [
+                'siteName' => $this->siteName(),
+                'class' => 'heroes die sooner',
+            ];    
+        }
+        elseif (is_page_template('template-full-width.php')) {
+            return [
+                'siteName' => $this->siteName(),
+                'class' => 'full',
+            ];    
+        }
+        else return [
             'siteName' => $this->siteName(),
+            'class' => 'stuff',
         ];
     }
 
