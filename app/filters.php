@@ -53,17 +53,29 @@ add_action('the_post', function() {
         \Roots\view()->share('classes', [
         'container' => 'max-w-5xl mx-auto m-8',
         'reverse' => 'md:flex-row-reverse',
-        'main' => 'w-full sm:w-3/4 p-6 mt-6',
+        'main' => 'w-full md:w-3/4 p-6 mt-6',
         'sidebar' => 'w-full md:w-1/4 p-6 flex flex-col flex-grow flex-shrink' 
         ]);
-        };
+        }
     // right sidebar without reverse class
-    if (is_page_template('template-sidebar-right.blade.php')) {
+    elseif (is_page_template('template-sidebar-right.blade.php')) {
         \Roots\view()->share('classes', [
         'container' => 'max-w-5xl mx-auto m-8',
         // 'reverse' => '',
-        'main' => 'w-full sm:w-3/4 p-6 mt-6',
+        'main' => 'w-full md:w-3/4 p-6 mt-6',
         'sidebar' => 'w-full md:w-1/4 p-6 flex flex-col flex-grow flex-shrink' 
+        ]);
+        }
+    // landing page or frontpage
+    // blog index
+    // blog single
+    // regular page without sidebar
+    else {
+        \Roots\view()->share('classes', [
+        'container' => 'max-w-5xl mx-auto m-8',
+        // 'reverse' => '',
+        'main' => 'w-full p-6 mt-6'
+        // 'sidebar' => 'w-full md:w-1/4 p-6 flex flex-col flex-grow flex-shrink' 
         ]);
         };
 });
