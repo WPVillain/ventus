@@ -36,7 +36,9 @@ add_filter('excerpt_more', function () {
  */
 
 /**
- * Share data in all views
+ * Sections, Container, Main and Sidebar Classes 
+ * 
+ * Sage Share data in all views
  * 
  * Using view share to make the sharing cross views possible
  * Won't work currently with another variable preceding it
@@ -45,11 +47,23 @@ add_filter('excerpt_more', function () {
  * use {{ $classes['main'] }}
  */
 add_action('the_post', function() { 
-    if (is_page_template('template-sidebar-left.blade.php') || is_page_template('template-sidebar-right.blade.php')) {
+    // left sidebar with row reverse for sidebar positioning 
+    // https://tailwindcss.com/components/flexbox-grids#column-order
+    if (is_page_template('template-sidebar-left.blade.php')) {
         \Roots\view()->share('classes', [
-        'main' => 'filter',
-        'container' => 'mx-auto flex flex-wrap pt-4 pb-12'
-        // 'twitter' => 'https://twitter.com/rootswp' 
+        'container' => 'max-w-5xl mx-auto m-8',
+        'reverse' => 'md:flex-row-reverse',
+        'main' => 'w-full sm:w-3/4 p-6 mt-6',
+        'sidebar' => 'w-full md:w-1/4 p-6 flex flex-col flex-grow flex-shrink' 
+        ]);
+        };
+    // right sidebar without reverse class
+    if (is_page_template('template-sidebar-right.blade.php')) {
+        \Roots\view()->share('classes', [
+        'container' => 'max-w-5xl mx-auto m-8',
+        // 'reverse' => '',
+        'main' => 'w-full sm:w-3/4 p-6 mt-6',
+        'sidebar' => 'w-full md:w-1/4 p-6 flex flex-col flex-grow flex-shrink' 
         ]);
         };
 });
