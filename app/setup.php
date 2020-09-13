@@ -157,3 +157,15 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-left'
     ] + $config);
 });
+
+/**
+ * WooCommerce Theme Support
+ * 
+ * Additional WooCommerce theme support for specific settings. WooCommerce suport itself has 
+ * been added to the theme using the WooCommerce package generoi/sage-woocommerce with  
+ * add_theme_support('woocommerce');
+ * 
+ * @link https://github.com/wpvillain/sage-woocommerce
+ * @link https://docs.woocommerce.com/document/woocommerce-theme-developer-handbook/
+ */
+add_theme_support('wc-product-gallery-lightbox');
