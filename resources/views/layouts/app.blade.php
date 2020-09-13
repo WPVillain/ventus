@@ -9,13 +9,12 @@
       <main class="main {{  $classes['main'] }}">
         @yield('content')
       </main>
-
       @hasSection('sidebar')
         <aside class="sidebar {{ $classes['sidebar'] }}">
           @yield('sidebar')
         </aside>
       @endif
-      </div>
+    </div>
 </section>
 
 @include('partials.footer')
