@@ -41,6 +41,8 @@
   "require": {
     "php": "^7.2.5",
     "generoi/sage-woocommerce": "^0.1.2",
+    "mwdelaney/sage-acf-gutenberg-blocks": "^0.5.0",
+    "mwdelaney/sage-advanced-custom-fields": "^1.5",
     "roots/acorn": "^1.1"
   },
   "require-dev": {
