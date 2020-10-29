@@ -16,7 +16,7 @@ require('laravel-mix-copy-watched');
 
 mix
   .setPublicPath('./dist')
-  .browserSync('sage.test');
+  .browserSync('sage-10.test');
 
 const tailwindcss = require('tailwindcss')
 
@@ -31,7 +31,6 @@ mix
 
 mix
   .js('resources/assets/scripts/app.js', 'scripts')
-  .js('resources/assets/scripts/customizer.js', 'scripts')
   .blocks('resources/assets/scripts/editor.js', 'scripts')
   .extract();
 
