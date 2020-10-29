@@ -1,0 +1,41 @@
+.header {
+  .quote {
+    position: relative;
+    bottom: -1rem;
+  }
+
+  .nav-menu {
+    @apply flex;
+    @apply flex-wrap;
+
+    .menu-item {
+      @apply px-4;
+      @apply py-2;
+      @apply border-none;
+
+      a {
+        @apply text-black;
+      }
+    }
+
+    & > .menu-item:last-of-type {
+      @apply mb-2;
+
+      @screen lg {
+        @apply mb-0;
+      }
+    }
+
+    .dropdown-menu {
+      .menu-item {
+        &::before {
+          content: "- ";
+        }
+
+        &:last-of-type {
+          @apply pb-0;
+        }
+      }
+    }
+  }
+}

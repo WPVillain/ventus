@@ -4,7 +4,7 @@
  * Theme setup.
  */
 
-namespace App;
+namespace App\Setup;
 
 use function Roots\asset;
 
@@ -169,3 +169,10 @@ add_action('widgets_init', function () {
  * @link https://docs.woocommerce.com/document/woocommerce-theme-developer-handbook/
  */
 add_theme_support('wc-product-gallery-lightbox');
+
+
+/**
+ * Tailwind Navwalker, based on WP Bootstrap Navwalker
+ *
+ * @package Tailwind-Navwalker
+ */
